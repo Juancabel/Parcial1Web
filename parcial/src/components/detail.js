@@ -29,10 +29,25 @@ function Detail({text}) {
             <Row>
             <Carousel>
       <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={detail?.image1}
+          alt="Slide 1"
+        />
       </Carousel.Item>
       <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={detail?.image2}
+          alt="Slide 2"
+        />
       </Carousel.Item>
       <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={detail?.image3}
+          alt="Slide 3"
+        />
       </Carousel.Item>
     </Carousel>
 
