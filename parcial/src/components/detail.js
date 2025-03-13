@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Header from './header'; 
+import Carousel from 'react-bootstrap/Carousel';
 
 function Detail({text}) {
       const [detail, setDetail] = useState([]);
@@ -16,15 +17,24 @@ function Detail({text}) {
          fetch(URL)
            .then((data) => data.json())
            .then((data) => {
-             setDetail(data[0]);
+             setDetail(data);
            });
        }, []);
     return (
         <Container style={{width:"100vw", height:"100vh"}}>
-            <Row >
-            <Header text={text}/>
+            <Row className="justify-content-center align-items-center" style={{ height: "100vh" }}>
+            <Row>
+                <Header text={text}/>
             </Row>
             <Row>
+            <Carousel>
+      <Carousel.Item>
+      </Carousel.Item>
+      <Carousel.Item>
+      </Carousel.Item>
+      <Carousel.Item>
+      </Carousel.Item>
+    </Carousel>
 
             </Row>
             <Row>
@@ -52,6 +62,7 @@ function Detail({text}) {
                     <Card.Title>{detail?.txt4}</Card.Title>
                 </Card>
                 </Col>
+            </Row>
             </Row>
       </Container>
   );
