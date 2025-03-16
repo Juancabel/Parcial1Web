@@ -11,7 +11,7 @@ function Header({text}) {
         <Container>
             <Row className="text-center">
                 <Col>
-                <h2> Cart </h2>
+                <h2> {text} </h2>
                 </Col>
             </Row>
         </Container>
