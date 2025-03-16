@@ -1,0 +1,11 @@
+{
+    "Menu": "Menu",
+    "Store": "Tienda",
+    "Cart": "Carrito",
+    "FWS": "Solucion al desperdicio de comida",
+    "Password_length": "La contraseña debe tener entre 5 y 8 caracteres",
+    "DI": "Datos Incorrectos",
+    "FP": "Olvidaste tu contraseña",
+    "LI": "Iniciar Sesion",
+    "Switch_Lang": "Cambiar idioma"
+}

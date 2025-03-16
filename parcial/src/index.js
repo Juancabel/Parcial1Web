@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import localeEsMessages from "./locales/es.json";
+import localeEnMessages from "./locales/en.json";
+import { IntlProvider } from 'react-intl';
+
+function RootComponent () {
+    
+    const [locale, setLocale] = useState("es"); 
+
+    const messages = locale === "es" ? localeEsMessages : localeEnMessages;
+
+    const toggleLanguage = () => {
+        setLocale(locale === "es" ? "en" : "es");
+    };
+
+    return (
+        <IntlProvider locale={locale} messages={messages}>
+            <App toggleLanguage={toggleLanguage} />  
+        </IntlProvider>
+    );
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <App />
-);
+root.render(<RootComponent />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

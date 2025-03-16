@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./header";
 import Carousel from "react-bootstrap/Carousel";
+import { FormattedMessage } from 'react-intl';
 
 function Detail() {
   const location = useLocation();

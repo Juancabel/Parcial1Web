@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/login';
 import Home from './components/home';
 import Detail from './components/detail';
+import {IntlProvider} from 'react-intl';
+import localeEsMessages from "./locales/es.json";
 
-function App() {
+function App( {toggleLanguage}) {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Login toggleLanguage={ toggleLanguage }/>} />
       <Route path="/home" element={<Home />} />
       <Route path="/detail" element={<Detail />} />
     </Routes>

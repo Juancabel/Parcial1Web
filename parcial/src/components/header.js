@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useEffect } from "react";
 import { useState } from "react";
+import { FormattedMessage } from 'react-intl';
 
 function Header({text}) {
   return (

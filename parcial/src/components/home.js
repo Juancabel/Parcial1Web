@@ -4,9 +4,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 function Home() {
   const navigate = useNavigate();
+  const intl = useIntl(); 
 
   const handleNavigation = (text) => {
     navigate("/detail", { state: { text } });
@@ -19,19 +22,25 @@ function Home() {
           <Col md={9}>
             <Row md={6} className="justify-content-center align-items-center">
               <div style={{ margin: "15px", color: "white", backgroundColor: "#808080", opacity: 0.8, width: "100%" }}>
-                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation("Menu")}>
+                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation(intl.formatMessage({ id: "Menu" }))}>
                   <Card.Body>
-                    <h3 className="mb-4 text-center">Menu</h3>
+                  <h3 className="text-center">
+                  <FormattedMessage id="Menu" defaultMessage="Menu" />
+                  </h3>
                   </Card.Body>
                 </Card>
-                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation("Store")}>
+                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation(intl.formatMessage({ id: "Store" }))}>
                   <Card.Body>
-                    <h3 className="mb-4 text-center">Store</h3>
+                  <h3 className="text-center">
+                  <FormattedMessage id="Store" defaultMessage="Store" />
+                  </h3>
                   </Card.Body>
                 </Card>
-                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation("Cart")}>
+                <Card className="bg-transparent p-4 shadow-lg" style={{ margin: "15px", color: "white" }} onClick={() => handleNavigation(intl.formatMessage({ id: "Cart" }))}>
                   <Card.Body>
-                    <h3 className="mb-4 text-center">Cart</h3>
+                  <h3 className="text-center">
+                  <FormattedMessage id="Cart" defaultMessage="Cart" />
+                  </h3>
                   </Card.Body>
                 </Card>
               </div>
