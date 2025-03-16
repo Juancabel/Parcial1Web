@@ -53,17 +53,19 @@ function Login({ toggleLanguage }) {
                                         />
                                     </Form.Group>
                                 </Form>
-                                <Button 
-                                        onClick={toggleLanguage} 
-                                        style={{ position: "absolute", top: "10px", right: "10px" }}>
-                                    <FormattedMessage id="Switch_Lang" defaultMessage="Change Language" />
-                                    </Button>
                             </Card.Body>
                         </Card>
                     </Col>
+
                     <Col md={6} className="justify-content-center align-items-center">
-                        <Card className='bg-color p-4 shadow-lg' style={{ margin: "15px", height: "100vh", width: "100vh", color: "white", backgroundColor: "darkslategrey" }}>
-                            <Card.Body>
+                        <Card className='bg-color p-4 shadow-lg' style={{ margin: "15px", height: "100vh", width: "100vh", color: "white", backgroundColor: "darkslategrey",position: "relative"}}>
+                            <div className="text-end p-3">
+                                <Button onClick={toggleLanguage}>
+                                    <FormattedMessage id="Switch_Lang" defaultMessage="Change Language" />
+                                </Button>
+                            </div>
+
+                            <Card.Body style={{ paddingTop: "20px" }}>
                                 <Form className="text-center">
                                     <Form.Group className="mb-4 text-center" controlId="formBasicEmail">
                                         <Form.Control type="username" placeholder="Username" />
