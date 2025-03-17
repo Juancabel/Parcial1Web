@@ -7,5 +7,7 @@
     "DI": "Incorrect Data",
     "FP": "Forgot your password",
     "LI": "Log In",
-    "Switch_Lang": "Switch Language"
+    "Switch_Lang": "Switch Language",
+    "User":"Username",
+    "Password":"Password"
 }

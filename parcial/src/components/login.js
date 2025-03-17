@@ -68,15 +68,19 @@ function Login({ toggleLanguage }) {
                             <Card.Body style={{ paddingTop: "20px" }}>
                                 <Form className="text-center">
                                     <Form.Group className="mb-4 text-center" controlId="formBasicEmail">
-                                        <Form.Control type="username" placeholder="Username" />
+                                        <Form.Control type="username" placeholder= {intl.formatMessage({ id: "User" })} />
                                     </Form.Group>
 
                                     <Form.Group className="mb-4 text-center" controlId="formBasicPassword">
-                                        <Form.Control type="password" placeholder="Password" isInvalid={!password_error} onChange={HandlePasswordChange} />
+                                        <Form.Control type="password" placeholder={intl.formatMessage({ id: "Password" })} isInvalid={!password_error} onChange={HandlePasswordChange} />
+                                        <Row>
                                         <Form.Text style={{ color: "white", paddingTop:"20px"}} className="text-center">{password}</Form.Text>
+                                        </Row>
+                                        <Row>
                                         <Form.Text style={{ color: "white" }} className="text-center">
                                             <FormattedMessage id="FP" defaultMessage="Forgot Password?" />
                                         </Form.Text>
+                                        </Row>
                                     </Form.Group>
                                     <Button type="submit" onClick={Submit}>
                                         <FormattedMessage id="LI" defaultMessage="Log In" />
